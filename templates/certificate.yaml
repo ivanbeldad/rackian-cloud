@@ -1,0 +1,26 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: {{ .Values.certificate.name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    environment: {{ .Values.issuer.environment }}
+spec:
+  secretName: {{ .Values.certificate.secret }}
+  issuerRef:
+    name: {{ required "Certificate needs issuer name" .Values.issuer.name }}
+    kind: {{ required "Certificate needs issuer kind" .Values.issuer.kind }}
+  commonName: {{ .Values.certificate.commonName }}
+  dnsNames:
+  {{- range .Values.certificate.dnsNames }}
+  - {{ . }}
+  {{- end }}
+  acme:
+    config:
+    - http01:
+        ingress: {{ required "Certificate needs ingress name" .Values.ingress.name }}
+      domains:
+      - {{ .Values.certificate.commonName }}
+      {{- range .Values.certificate.dnsNames }}
+      - {{ . }}
+      {{- end }}

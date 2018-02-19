@@ -1,0 +1,18 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: {{ required "Issuer needs to be either Issuer or ClusterIssuer" .Values.issuer.kind }}
+metadata:
+  name: {{ required "Issuer need a name" .Values.issuer.name }}
+  namespace: {{ required "Issuer needs a namespace" .Values.namespace }}
+  labels:
+    environment: {{ required "Issuer needs an environment" .Values.issuer.environment }}
+spec:
+  acme:
+    {{- if eq .Values.issuer.environment "production" }}
+    server: https://acme-v01.api.letsencrypt.org/directory
+    {{- else }}
+    server: https://acme-staging.api.letsencrypt.org/directory
+    {{- end }}
+    email: {{ required "Issuer needs an email" .Values.issuer.email }}
+    privateKeySecretRef:
+      name: {{ default .Values.issuer.name .Values.issuer.secret }}
+    http01: {}
