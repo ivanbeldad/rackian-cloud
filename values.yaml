@@ -1,6 +1,5 @@
 # set environment at runtime
 environment:
-namespace: rackian-cloud
 
 issuer:
   name: letsencrypt
