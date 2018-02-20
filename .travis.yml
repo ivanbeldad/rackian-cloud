@@ -3,6 +3,9 @@ sudo: required
 before_install:
   - source scripts/install.sh
 
+before_script:
+  - helm init --client-only
+
 script:
   - helm lint
   - helm package .

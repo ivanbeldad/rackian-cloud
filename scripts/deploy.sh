@@ -5,9 +5,6 @@ if [ -n "$TRAVIS_BUILD_DIR" ]; then
   cd $TRAVIS_BUILD_DIR
 fi
 
-# initialize helm
-helm init --client-only
-
 # add git repository and configure
 git remote add origin https://ivandelabeldad:$GITHUB_TOKEN@github.com/ivandelabeldad/rackian-cloud
 git config --global user.name "Ivan de la Beldad Fernandez"
