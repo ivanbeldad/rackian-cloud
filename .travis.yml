@@ -1,0 +1,14 @@
+before_install:
+  - source scripts/install.sh
+
+script:
+  - helm lint
+  - helm package .
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: scripts/deploy.sh
+  on:
+    branch: master
+    tags: true
