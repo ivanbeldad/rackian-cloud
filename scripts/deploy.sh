@@ -5,14 +5,20 @@ if [ -n "$TRAVIS_BUILD_DIR" ]; then
   cd $TRAVIS_BUILD_DIR
 fi
 
-# add git repository and configure
-git remote add github https://ivandelabeldad:$GITHUB_TOKEN@github.com/ivandelabeldad/rackian-cloud
-git config --global user.name "Ivan de la Beldad Fernandez"
+# configure git name and email
+git config --global user.name "Travis CI"
 git config --global user.email "ivandelabeldad@gmail.com"
+
+# add git repository and pull all branches
+mkdir out && cd out
+git init
+git remote add origin https://ivandelabeldad:$GITHUB_TOKEN@github.com/ivandelabeldad/rackian-cloud
+git pull --all
+git checkout master
 
 # update gh_pages with master changes
 git checkout gh-pages
-git merge master -m "merge master into gh_pages"
+git merge master -m "merge master into gh-pages"
 
 # ensure repo folder exists
 mkdir repo -p
@@ -23,5 +29,5 @@ helm repo index repo
 
 # commit changes
 git add repo/*
-git commit -m "release new version $TRAVIS_TAG"
+git commit -m "release new version: $TRAVIS_TAG"
 git push github gh-pages

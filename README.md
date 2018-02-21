@@ -1,6 +1,6 @@
 # rackian-cloud
 
-[![Version](https://img.shields.io/badge/version-0.0.1-orange.svg?style=flat-square)](https://github.com/ivandelabeldad/rackian-cloud)
+[![Version](https://img.shields.io/badge/version-1.0.0-orange.svg?style=flat-square)](https://github.com/ivandelabeldad/rackian-cloud)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg?style=flat-square)](https://github.com/ivandelabeldad/rackian-cloud/blob/master/LICENSE)
 
 Helm configuration to deploy rackian-cloud to kubernetes cluster
