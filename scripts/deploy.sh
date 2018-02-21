@@ -6,12 +6,11 @@ if [ -n "$TRAVIS_BUILD_DIR" ]; then
 fi
 
 # add git repository and configure
-git remote add origin https://ivandelabeldad:$GITHUB_TOKEN@github.com/ivandelabeldad/rackian-cloud
+git remote add github https://ivandelabeldad:$GITHUB_TOKEN@github.com/ivandelabeldad/rackian-cloud
 git config --global user.name "Ivan de la Beldad Fernandez"
 git config --global user.email "ivandelabeldad@gmail.com"
 
-# pull branches and update gh_pages with master changes
-git pull --all
+# update gh_pages with master changes
 git checkout gh_pages
 git merge master -m "merge master into gh_pages"
 
@@ -23,5 +22,6 @@ helm package . -d repo --version $TRAVIS_TAG
 helm repo index repo
 
 # commit changes
-git add .
+git add repo/*
 git commit -m "release new version $TRAVIS_TAG"
+git push github gh_pages
