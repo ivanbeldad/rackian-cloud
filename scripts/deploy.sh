@@ -12,7 +12,7 @@ git config --global user.email "ivandelabeldad@gmail.com"
 # add git repository and pull all branches
 mkdir out && cd out
 git init
-git remote add origin https://ivandelabeldad:$GITHUB_TOKEN@github.com/ivandelabeldad/rackian-cloud
+git remote add origin https://$GITHUB_TOKEN@github.com/ivandelabeldad/rackian-cloud
 git pull --all
 git checkout master
 
