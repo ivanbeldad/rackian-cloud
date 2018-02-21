@@ -11,7 +11,7 @@ git config --global user.name "Ivan de la Beldad Fernandez"
 git config --global user.email "ivandelabeldad@gmail.com"
 
 # update gh_pages with master changes
-git checkout gh_pages
+git checkout gh-pages
 git merge master -m "merge master into gh_pages"
 
 # ensure repo folder exists
@@ -24,4 +24,4 @@ helm repo index repo
 # commit changes
 git add repo/*
 git commit -m "release new version $TRAVIS_TAG"
-git push github gh_pages
+git push github gh-pages
