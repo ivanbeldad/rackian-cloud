@@ -2,8 +2,6 @@ apiVersion: certmanager.k8s.io/v1alpha1
 kind: {{ required "Issuer needs to be either Issuer or ClusterIssuer" .Values.issuer.kind }}
 metadata:
   name: {{ required "Issuer need a name" .Values.issuer.name }}
-  labels:
-    environment: {{ required "Issuer needs an environment" .Values.issuer.environment }}
 spec:
   acme:
     {{- if eq .Values.issuer.environment "production" }}
