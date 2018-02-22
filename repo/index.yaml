@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  rackian-cloud:
+  - apiVersion: v1
+    created: 2018-02-21T18:16:22.323538211Z
+    description: Rackian Cloud chart
+    digest: ab8fa0fdc42c80a058ff21fba96defc2c281869e3b3cead05cf6d602c5c61934
+    icon: https://storage.googleapis.com/rackian-cloud/icon.png
+    name: rackian-cloud
+    urls:
+    - rackian-cloud-1.0.2.tgz
+    version: 1.0.2
+generated: 2018-02-21T18:16:22.321880487Z
