@@ -25,4 +25,4 @@ helm repo index repo
 # commit changes
 git add repo/*
 git commit -m "release new version: $TRAVIS_TAG"
-git push github gh-pages
+git push origin gh-pages
