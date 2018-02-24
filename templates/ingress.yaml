@@ -17,8 +17,9 @@ spec:
   rules:
   {{- range .Values.ingress.hosts }}
   - host: {{ .host }}
-    paths:
-    - backend:
-        serviceName: {{ required "Hosts must have a serviceName" .serviceName }}
-        servicePort: {{ required "Hosts must have a servicePort" .servicePort }}
+    http:
+      paths:
+      - backend:
+          serviceName: {{ required "Hosts must have a serviceName" .serviceName }}
+          servicePort: {{ required "Hosts must have a servicePort" .servicePort }}
   {{- end }}
