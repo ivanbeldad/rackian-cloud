@@ -16,15 +16,15 @@ ingress:
   name: rackian-cloud
   tls: enabled
   backend:
-    serviceName: web
+    serviceName: api-gateway
     servicePort: 80
-  hosts:
-  - host: api.rackian.com
-    serviceName: api
-    servicePort: 80
-  - host: staging.api.rackian.com
-    serviceName: api-staging
-    servicePort: 80
-  - host: accounts.rackian.com
-    serviceName: accounts
-    servicePort: 80
+  # hosts:
+  # - host: api.rackian.com
+  #   serviceName: api
+  #   servicePort: 80
+  # - host: staging.api.rackian.com
+  #   serviceName: api-staging
+  #   servicePort: 80
+  # - host: accounts.rackian.com
+  #   serviceName: accounts
+  #   servicePort: 80
