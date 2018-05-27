@@ -5,9 +5,9 @@ metadata:
 spec:
   acme:
     {{- if eq .Values.issuer.environment "production" }}
-    server: https://acme-v01.api.letsencrypt.org/directory
+    server: https://acme-v02.api.letsencrypt.org/directory
     {{- else }}
-    server: https://acme-staging.api.letsencrypt.org/directory
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
     {{- end }}
     email: {{ required "Issuer needs an email" .Values.issuer.email }}
     privateKeySecretRef:

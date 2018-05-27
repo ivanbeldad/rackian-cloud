@@ -8,11 +8,9 @@ issuer:
 certificate:
   name: rackian-cloud
   secret: rackian-cloud-certs
-  commonName: rackian.com
+  commonName: '*.rackian.com'
   dnsNames:
-    - api.rackian.com
-    - staging.api.rackian.com
-    - register.rackian.com
+    - rackian.com
 
 ingress:
   name: rackian-cloud
@@ -27,6 +25,6 @@ ingress:
   - host: staging.api.rackian.com
     serviceName: api-staging
     servicePort: 80
-  - host: register.rackian.com
-    serviceName: register
+  - host: accounts.rackian.com
+    serviceName: accounts
     servicePort: 80
