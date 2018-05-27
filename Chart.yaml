@@ -2,4 +2,4 @@ apiVersion: v1
 description: Rackian Cloud chart
 name: rackian-cloud
 version: 1.0.0
-icon: https://storage.googleapis.com/rackian-cloud/icon.png
+icon: https://storage.googleapis.com/rackian-cloud/cloud/logo.png

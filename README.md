@@ -1,10 +1,15 @@
 # rackian-cloud
 
+<p align="center">
+  <img src="./logo.png">
+</p>
+
+Helm configuration to deploy rackian-cloud to kubernetes cluster
+
 [![Travis](https://img.shields.io/travis/ivandelabeldad/rackian-cloud.svg?style=flat-square)](https://travis-ci.org/ivandelabeldad/rackian-cloud)
 [![Version](https://img.shields.io/badge/version-1.0.2-orange.svg?style=flat-square)](https://github.com/ivandelabeldad/rackian-cloud)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg?style=flat-square)](https://github.com/ivandelabeldad/rackian-cloud/blob/master/LICENSE)
 
-Helm configuration to deploy rackian-cloud to kubernetes cluster
 
 ## Purpose
 
